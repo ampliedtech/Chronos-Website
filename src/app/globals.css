@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #000000;
+  --color-deep: #1a1a1a;
+  --color-brand-primary: #CA8F52;
+  --color-brand-secondary: #7B1315;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-textd: #ffffff;
+  
+  --radius: 1rem;
+  --shadow-card: 0 8px 28px rgba(202,143,82,0.12);
+}
+
+html {
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    border-color: rgb(202 143 82 / 0.2);
+  }
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+  
+  /* Performance optimizations */
+  .motion-safe {
+    will-change: transform, opacity;
+  }
+  
+  .motion-reduce {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Optimize animations for better performance */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .group-hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
