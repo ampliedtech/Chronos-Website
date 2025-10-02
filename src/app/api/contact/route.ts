@@ -19,8 +19,8 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     // Note: In testing mode, emails can only be sent to the verified email address
     // For production, verify a domain at resend.com/domains and update the 'from' address
-    const recipientEmail = process.env.CONTACT_EMAIL || 'info@ikigaii.in';
-    const fromEmail = process.env.FROM_EMAIL || 'noreply@ikigaii.in';
+    const recipientEmail = process.env.CONTACT_EMAIL || 'ketan.godkhindi@chronosstrategic.com';
+    const fromEmail = process.env.FROM_EMAIL || 'noreply@chronosstrategic.com';
     
     const { data, error } = await resend.emails.send({
       from: fromEmail,
