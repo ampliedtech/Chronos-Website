@@ -89,7 +89,7 @@ export default function RootLayout({
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "email": "info@ikigaii.in",
+                "email": "ketan.godkhindi@chronosstrategic.com",
                 "contactType": "customer service"
               }
             })
